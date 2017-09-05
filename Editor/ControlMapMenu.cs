@@ -1,3 +1,8 @@
+/*
+ * InputManager in script changes: http://plyoung.appspot.com/blog/manipulating-input-manager-in-script.html
+ * 
+ */
+
 using UnityEngine;
 using UnityEditor;
 using System;
