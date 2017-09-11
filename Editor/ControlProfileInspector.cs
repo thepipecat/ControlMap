@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace ThePipeCat.ControlMap
+namespace ThePipeCat
 {
   [CustomEditor(typeof(ControlProfile))]
   public class ControlProfileInspector : Editor

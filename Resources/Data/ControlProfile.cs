@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ThePipeCat.ControlMap
+namespace ThePipeCat
 {
   [CreateAssetMenuAttribute(fileName = "Control Profile", menuName = "Control Profile")]
   public class ControlProfile : ScriptableObject

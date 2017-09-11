@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ThePipeCat.ControlMap
+namespace ThePipeCat
 {
   public class ControlMapManager : MonoBehaviour
   {

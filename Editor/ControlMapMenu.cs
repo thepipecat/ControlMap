@@ -1,13 +1,14 @@
 /*
  * InputManager in script changes: http://plyoung.appspot.com/blog/manipulating-input-manager-in-script.html
- * 
+ *
  */
 
 using UnityEngine;
 using UnityEditor;
 using System;
+using System.IO;
 
-namespace ThePipeCat.ControlMap
+namespace ThePipeCat
 {
   public static class ControlMapMenu
   {
@@ -63,18 +64,18 @@ namespace ThePipeCat.ControlMap
     [MenuItem("ThePipeCat/ControlMap/Backup Input Manager")]
     private static void BackupInputManager()
     {
-      if (System.IO.File.Exists(projectPath + "/" + inputSettingsBackup))
+      if (File.Exists(projectPath + "/" + inputSettingsBackup))
       {
-        System.IO.File.Delete(projectPath + "/" + inputSettingsBackup);
+        File.Delete(projectPath + "/" + inputSettingsBackup);
       }
 
-      System.IO.File.Copy(projectPath + "/" + inputSettings, projectPath + "/" + inputSettingsBackup);
+      File.Copy(projectPath + "/" + inputSettings, projectPath + "/" + inputSettingsBackup);
     }
 
     [MenuItem("ThePipeCat/ControlMap/Restore Input Manager")]
     private static void RestoreInputManager()
     {
-      if (System.IO.File.Exists(projectPath + "/" + inputSettingsBackup))
+      if (File.Exists(projectPath + "/" + inputSettingsBackup))
       {
         SerializedObject oldSettings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath(inputSettingsBackup)[0]);
         SerializedObject settings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath(inputSettings)[0]);
@@ -90,7 +91,7 @@ namespace ThePipeCat.ControlMap
     [MenuItem("ThePipeCat/ControlMap/Restore Input Manager", true)]
     private static bool RestoreInputManagerValidate()
     {
-      return System.IO.File.Exists(projectPath + "/" + inputSettingsBackup);
+      return File.Exists(projectPath + "/" + inputSettingsBackup);
     }
   }
 }
